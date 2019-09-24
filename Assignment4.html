@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Market</title>
+</head>
+<body>
+    <style>
+        .sty{
+            width : 500px;
+            text-align: center;
+        }
+td{
+    border : black  solid ;
+}
+
+    </style>
+    <h1 style = "text-align: center">Stock Manager</h1>
+    <div class = "container">
+        <div class = "row">
+            <div class = "col-md-2">
+                    <form id = "res">
+                            <div class = "form-group">
+                                    <label>Item Code</label>
+                                    <input type = "text" class = "form-control" id = "code" placeholder="Code">
+                                </div>
+                            <div class = "form-group">
+                                <label>Qunatity</label>
+                                <input type = "text" class = "form-control" id = "quantity" placeholder="Enter Quantity Required">
+                            </div>
+                            <div class = "form-group">
+                                    <label>Unit Price</label>
+                                    <input type = "text" class = "form-control" id = "price" placeholder="Enter each unit price">
+                                </div>
+                            
+                            <button type="button" class="btn btn-primary" onclick="myCreateFunction()" onclick="myCreateFunction2()">Add Item</button>
+                          </form>
+                          <br>
+
+                          <h5 >Total Cost:<span id = "tot"></span></h5>
+                          <br>
+                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Place Order</button>
+
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+        <div class = "container" style = "padding :15px;">
+            <form>
+                    <div class = "form-group">
+                        <div class = "row">
+                            <div class = "col-md-6">
+                                    <label>Name</label>
+                                    <input type = "text" class = "form-control"  placeholder="Enter your Name" id = "ad1">
+
+                            </div>
+                            <div class = "col-md-6">
+                                    <label>Phone Number</label>
+                                    <input type = "number" class = "form-control"  placeholder="Enter Phone Number" id = "ad2">
+
+                            </div>
+                        </div>
+                            <label>Address Line-1</label>
+                            <input type = "text" class = "form-control"  placeholder="Address Line-1" id = "ad3">
+                        </div>
+                    <div class = "form-group">
+                        <label>Address Line-2</label>
+                        <input type = "text" class = "form-control"  placeholder="Address Line-2" id = "ad4">
+                    </div>
+                    <div class = "form-group">
+                            <div class = "row">
+                                    <div class = "col-md-6">
+                                            <label>City</label>
+                                            <input type = "text" class = "form-control"  placeholder="Enter City" id  = "ad5">
+        
+                                    </div>
+                                    <div class = "col-md-6">
+                                            <label>Zip Code</label>
+                                            <input type = "number" class = "form-control"  placeholder="Postal Code" id = "ad6">
+        
+                                    </div>
+                                </div>
+
+                    </div>
+                          
+                    <button type="button" class="btn  close" data-dismiss = "modal" >Submit</button>
+                  </form>
+                </div>
+    </div>
+  </div>
+</div>
+<br>
+<br>
+
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target = "#disp" onclick="myCreateFunction2()" >View Invoice</button>
+<div class = "container">
+<div class="modal fade " id = "disp" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class = "container" style = "padding: 20px;">
+          <div class = "row">
+              <div class = "col-md-4">
+
+                  <p id = "dis"></p>
+
+              </div>
+              <div class = "col-md-8">
+                    <table id="mytable2" class = "sty" >
+                            <tr>
+                              <td>Item Code</td>
+                              <td>Quantity</td>
+                              <td>Unit Price</td>
+                              <td>Total Cost</td>
+                            </tr>
+                           
+                          </table>
+              </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+            </div>
+            <div class = "col-md-6 " style = "margin-left: 200px;">
+                    <table id="myTable" class = "sty" >
+                            <tr>
+                              <td>Item Code</td>
+                              <td>Quantity</td>
+                              <td>Unit Price</td>
+                              <td>Total Cost</td>
+                            </tr>
+                           
+                          </table>
+            </div>
+        </div>
+
+    </div>
+    
+    <script>
+        var c = 0;
+        function myCreateFunction() {
+        
+            
+  var table = document.getElementById("myTable");
+  var row = table.insertRow(-1);
+  var cell1 = row.insertCell(0);
+  var cell2 = row.insertCell(1);
+   var cell3 = row.insertCell(2);
+   var cell4 = row.insertCell(3);
+   var q = document.getElementById("quantity").value;
+   var p = document.getElementById("price").value;
+   
+  cell1.innerHTML = document.getElementById("code").value;
+  cell2.innerHTML = document.getElementById("quantity").value;
+  cell3.innerHTML = document.getElementById("price").value;
+  cell4.innerHTML = q * p;
+  c = c + Number(cell4.innerHTML);
+  document.getElementById("tot").innerHTML = c;
+  
+  
+          
+}
+   
+    function myCreateFunction2() {
+        
+        var a = document.getElementById("ad1").value;
+         var b = document.getElementById("ad2").value;
+         var c = document.getElementById("ad3").value;
+         var d = document.getElementById("ad4").value;
+         var e = document.getElementById("ad5").value;
+         var f = document.getElementById("ad6").value;
+         
+          document.getElementById("dis").innerHTML += "<h4>Address</h4><br>" + "<b>"+ a +"</b>" + "<br>" + b + "<br>" +  c + "<br>" + d + "<br>" +  e + "<br>" + f;
+
+        var table = document.getElementById("mytable2");
+        var row = table.insertRow(-1);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+         var cell3 = row.insertCell(2);
+         var cell4 = row.insertCell(3);
+         var q = document.getElementById("quantity").value;
+         var p = document.getElementById("price").value;
+         
+        cell1.innerHTML = document.getElementById("code").value;
+        cell2.innerHTML = document.getElementById("quantity").value;
+        cell3.innerHTML = document.getElementById("price").value;
+        cell4.innerHTML = q * p;
+        c = c + Number(cell4.innerHTML);
+        document.getElementById("tot").innerHTML = c;
+        res.reset();
+        
+                
+      }
+
+    </script>
+
+     <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+</body>
+</html>

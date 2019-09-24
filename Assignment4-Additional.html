@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Survey Form</title>
+</head>
+
+<body style="background-color: cadetblue ">
+
+  <h2 style="text-align: center">Survey Form</h2>
+
+  <div class="container" style="background-color: white; margin-left: 100px; padding:30px;">
+
+    <h6 style="text-align: center">Let us know how we can improve the free Code Camp</h6>
+    <br>
+
+
+
+    <form>
+      <div class="form-group row">
+        <label class="col-sm-5 col-form-label" style="text-align: right">Name</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="input1" placeholder="Enter your Name">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="inputEmail3" class="col-sm-5 col-form-label" style="text-align: right">Email</label>
+        <div class="col-sm-4">
+          <input type="email" class="form-control" id="input2" placeholder="Email">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-sm-5 col-form-label" style="text-align: right">Age</label>
+        <div class="col-sm-4">
+          <input type="number" class="form-control" id="input3" placeholder="Enter your Age">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-sm-5 col-form-label" style="text-align: right">Which option best describes your current
+          role?</label>
+        <div class="col-sm-2">
+          <select class="form-control form-control-sm">
+            <option name="input4">Student</option>
+            <option name="input4">Employeed</option>
+            <option name="input4">Organisation</option>
+            <option name="input4">Trainer</option>
+          </select>
+        </div>
+      </div>
+
+      <fieldset class="form-group">
+        <div class="row">
+          <legend class="col-form-label col-sm-5 pt-0" style="text-align: right">How likely is that you recommend
+            freeCodeCamp to a friend?</legend>
+          <div class="col-sm-4">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="input5" id="gridRadios1" value="Definitely" onclick="recomm(this.value)">
+              <label class="form-check-label" for="gridRadios1">
+                Definitely
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="input5" id="gridRadios2" value="Maybe" onclick="recomm(this.value)">
+              <label class="form-check-label" for="gridRadios2">
+                Maybe
+              </label>
+            </div>
+            <div class="form-check ">
+              <input class="form-check-input" type="radio" name="input5" id="gridRadios3" value="Not Sure" onclick="recomm(this.value)">
+              <label class="form-check-label" for="gridRadios3">
+                Not sure
+              </label>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+      <div class="form-group row">
+        <label class="col-sm-5 col-form-label" style="text-align: right">What do you like most in FCC?</label>
+        <div class="col-sm-2">
+          <select class="form-control form-control-sm">
+            <option id="">Select an option</option>
+            <option value="">Student</option>
+            <option>Student</option>
+            <option>Student</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="col-sm-5" style="text-align: right">Things that should be improved in the future<br>(Check all that
+          apply)</div>
+        <div class="col-sm-4">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name = "chk" value = " Front-end Projects" id="gridCheck1">
+            <label class="form-check-label" for="gridCheck1">
+              Front-end Projects
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name = "chk" value = "Back-end Projects" id="gridCheck1">
+            <label class="form-check-label" for="gridCheck1">
+              Back-end Projects
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name = "chk" value = "Data Visualization" id="gridCheck1">
+            <label class="form-check-label" for="gridCheck1">
+              Data Visualization
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name = "chk" value = "Challenges" id="gridCheck1">
+            <label class="form-check-label" for="gridCheck1">
+              Challenges
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name = "chk" value = "Open Source Community" id="gridCheck1">
+            <label class="form-check-label" for="gridCheck1">
+              Open Source Community
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name = "chk"value = " Gitter help rooms" id="gridCheck1">
+            <label class="form-check-label" for="gridCheck1">
+              Gitter help rooms
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name = "chk" value = " Videos" id="gridCheck1">
+            <label class="form-check-label" for="gridCheck1">
+              Videos
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name = "chk" value = "City Meetups" id="gridCheck1">
+            <label class="form-check-label" for="gridCheck1">
+              City Meetups
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name = "chk" value = " Wiki" id="gridCheck1">
+            <label class="form-check-label" for="gridCheck1">
+              Wiki
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name = "chk" value = "Forum" id="gridCheck1">
+            <label class="form-check-label" for="gridCheck1">
+              Forum
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name = "chk" value = "Additional Courses" id="gridCheck1">
+            <label class="form-check-label" for="gridCheck1">
+              Additional Courses
+            </label>
+          </div>
+        </div>
+
+      </div>
+      <div class="form-group row">
+        <label class="col-sm-5 col-form-label" style="text-align: right">Any comments or suggestions?</label>
+        <div class="col-sm-4">
+          <textarea class="form-control" id="input8" rows="3" placeholder="Enter your comment here"></textarea>
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="col-sm-1 offset-5">
+
+        </div>
+      </div>
+
+    </form>
+
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".display" style="margin-left: 450px;"
+      onclick="displayout()" >View Preview</button>
+
+    <div class="modal fade display" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <h6>Name</h6><span id="output1"></span>
+          <h6>Email</h6><span id="output2"></span>
+          <h6>Age</h6><span id="output3"></span>
+          <h6>Which option best describes your current role?</h6>
+          <h6>How likely is that you recommend freeCodeCamp to a friend?</h6>
+          <h6>What do you like most in FCC?</h6>
+          <h6>Things that should be improved in the future</h6><span id="output7"></span>
+          <h6>Any comments or suggestions?</h6><span id="output8"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <script>
+
+var data1 = {
+
+dlike : [],
+};
+
+    function displayout() {
+      var data = {
+        dname: document.getElementById("input1").value,
+        demail: document.getElementById("input2").value,
+        dage: document.getElementById("input3").value,
+        dcomment: "",
+         
+        set comm(com) {
+          this.dcomment = com;
+        },
+      
+
+      };
+      data.comm = document.getElementById("input8").value;
+
+      checks();
+
+      document.getElementById("output1").innerHTML = data.dname;
+      document.getElementById("output2").innerHTML = data.demail;
+      document.getElementById("output3").innerHTML = data.dage;
+      document.getElementById("output7").innerHTML = data1.dlike.toString();
+      document.getElementById("output8").innerHTML = data.dcomment;
+    }
+
+    
+    function checks (){
+        var checkboxes = document.getElementsByName("chk");
+        checkboxes.forEach(function (element){
+          if(element.checked){
+            data1.dlike[data1.dlike.length] = element.value;
+          }
+        });
+      }
+
+  </script>
+
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
